@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "yarn minify && next build",
     "start": "next start",
-    "minify": "npx parcel build packages/script.js --dist-dir public --no-source-maps",
+    "minify": "npx parcel build packages/script.js --dist-dir public",
     "format": "npx prettier --write \"**/*.{js,ts,jsx,tsx,json,css,md,html}\"",
     "lint": "next lint",
     "generate-pwa-assets": "cd ./public/icons/ && npx pwa-asset-generator ../staticshield-rounded.png -m ../manifest.json -d -q 100 -u -f -o false"

@@ -21,7 +21,7 @@ import BASE_URL from '../lib/baseUrl';
   }
 
   const res = await fetch(
-    `${BASE_URL}/api/verify-token/?token=` + decodeURIComponent(token)
+    `${BASE_URL}/api/verify-token?token=` + decodeURIComponent(token)
   );
   const data = await res.json();
   console.log(data);

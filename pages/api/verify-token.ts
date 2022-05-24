@@ -1,10 +1,17 @@
 import { NextApiRequest, NextApiResponse } from 'next';
+import NextCors from 'nextjs-cors';
 import jwt from 'jsonwebtoken';
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<{ invalidtoken: boolean; expired: boolean }>
 ) {
+  await NextCors(req, res, {
+    methods: ['GET', 'HEAD'],
+    origin: '*',
+    optionsSuccessStatus: 200,
+  });
+
   const { token } = req.query;
   console.log(token);
   try {
